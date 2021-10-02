@@ -679,7 +679,7 @@ main() {
       ASK=false
 
       [ -z "$FQDN" ] && print_error "FQDN cannot be empty"                                                            # check if FQDN is empty
-      ASK=true                                                                                                        # check if FQDN is valid
+      ASK=false                                                                                                        # check if FQDN is valid
       [ -d "/etc/letsencrypt/live/$FQDN/" ] && print_error "A certificate with this FQDN already exists!" && ASK=true # check if cert exists
 
       [ "$ASK" == true ] && FQDN=""
